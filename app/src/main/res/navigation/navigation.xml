@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home">
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/home"
+        android:name="hackon.lifetime.shopon.fragments.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list">
+
+        <!-- Action to Navigate to Detail Fragment -->
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <!-- Detail Fragment -->
+    <fragment
+        android:id="@+id/detail"
+        android:name="hackon.lifetime.shopon.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <!-- Argument to Pass Product ID to Detail Fragment -->
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
